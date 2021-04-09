@@ -22,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/border_round_10_303030"
+            android:onClick="@{()->viewModel.clickSearch()}"
             android:text="@string/text_search"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,8 +33,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:hint="@string/msg_input_keyword"
+            android:imeOptions="actionSearch"
             android:inputType="text"
             android:maxLines="1"
+            android:text="@={viewModel.keyword}"
             app:layout_constraintBottom_toBottomOf="@id/searchButton"
             app:layout_constraintEnd_toStartOf="@id/searchButton"
             app:layout_constraintStart_toStartOf="parent"

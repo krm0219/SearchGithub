@@ -1,8 +1,8 @@
-package com.kurly.task.searchgithub
+package com.kurly.task.searchgithub.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kurly.task.searchgithub.ui.main.MainFragment
+import com.kurly.task.searchgithub.R
 
 class MainActivity : AppCompatActivity() {
 
