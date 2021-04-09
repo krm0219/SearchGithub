@@ -1,7 +1,8 @@
-package com.kurly.task.searchgithun.ui.main
+package com.kurly.task.searchgithub.ui.main
 
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
     // TODO: Implement the ViewModel
+
 }

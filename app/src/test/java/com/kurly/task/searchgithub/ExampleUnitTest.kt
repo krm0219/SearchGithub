@@ -1,4 +1,4 @@
-package com.kurly.task.searchgithun
+package com.kurly.task.searchgithub
 
 import org.junit.Test
 
