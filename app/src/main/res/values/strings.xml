@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SearchGithub</string>
+
+    <string name="text_search">Search</string>
+    <string name="msg_input_keyword">Input keyword</string>
 </resources>
