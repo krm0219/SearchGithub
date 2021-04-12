@@ -33,7 +33,7 @@ class MainViewModel : ViewModel() {
 
         _hideKeyboard.value = Event(true)
 
-        if (_keyword.value.isNullOrBlank()) {
+        if (_keyword.value.isNullOrBlank() || _keyword.value!!.trim().isEmpty()) {
 
         } else {
 
@@ -70,5 +70,5 @@ class MainViewModel : ViewModel() {
             }
         }
 
-
+    }
     }
