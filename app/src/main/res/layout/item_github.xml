@@ -20,12 +20,12 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/item_tv_initial"
+                android:id="@+id/img_item_owner"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginVertical="16dp"
                 android:layout_marginStart="16dp"
-                android:background="@android:color/darker_gray"
+                android:background="@drawable/border_rect_303030"
                 android:gravity="center"
                 android:padding="4dp"
                 android:textSize="30sp"
@@ -35,7 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/item_tv_title"
+                android:id="@+id/text_item_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -43,14 +43,14 @@
                 android:text="@{repository.fullName}"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/item_tv_descript"
+                app:layout_constraintBottom_toTopOf="@id/text_item_description"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/item_tv_initial"
+                app:layout_constraintStart_toEndOf="@id/img_item_owner"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="android/architecture-samples aplemdls" />
 
             <TextView
-                android:id="@+id/item_tv_descript"
+                android:id="@+id/text_item_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -59,8 +59,8 @@
                 android:text="@{repository.description}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/item_tv_title"
-                app:layout_constraintTop_toBottomOf="@id/item_tv_title" />
+                app:layout_constraintStart_toStartOf="@id/text_item_name"
+                app:layout_constraintTop_toBottomOf="@id/text_item_name" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>

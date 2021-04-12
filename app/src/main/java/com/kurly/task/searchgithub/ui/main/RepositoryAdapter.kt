@@ -1,9 +1,7 @@
 package com.kurly.task.searchgithub.ui.main
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -27,6 +25,7 @@ class RepositoryAdapter() : ListAdapter<RepositoryModel, RepositoryAdapter.ViewH
 
         return R.layout.item_github
     }
+
     override fun getItemCount(): Int {
 
         return repositories.size
@@ -42,7 +41,7 @@ class RepositoryAdapter() : ListAdapter<RepositoryModel, RepositoryAdapter.ViewH
 
         fun bind(repository: RepositoryModel) {
 
-             binding.repository = repository
+            binding.repository = repository
             binding.executePendingBindings()
         }
     }
