@@ -1,5 +1,6 @@
 package com.kurly.task.searchgithub.ui.main
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kurly.task.searchgithub.model.RepositoryModel
@@ -43,32 +44,11 @@ class MainViewModel : ViewModel() {
                 .subscribe({
 
                     _githubRepositories.postValue(it.items)
-
-//                    progressVisible.value = false
-//                    Log.e(RetrofitClient.TAG, "${it.resultCode} / ${it.resultMsg}")
-//
-//                    if (it.resultCode == 0) {
-//
-//                        Preferences.userName = name
-//                        Preferences.userEmail = email
-//                    }
-//
-//                    _resultAlert.value = it
-
                 }, {
 //                    progressVisible.value = false
 //                    _errorAlert.value = R.string.msg_network_connect_error
 
                 })
-
-
-            CoroutineScope(Dispatchers.IO).launch {
-//                githubRepository.getRepositories(query)?.let {
-//                        response -> if(response.isSuccessful) {
-//                    response.body()?.let { _githubRepositories.postValue(it.items) } } } }
-
-            }
         }
-
     }
-    }
+}

@@ -64,7 +64,7 @@ class MainFragment : Fragment() {
             }
         })
 
-        //   setRecyclerView()
+           setRecyclerView()
     }
 
 
@@ -75,8 +75,14 @@ class MainFragment : Fragment() {
 
     private fun setRecyclerView() {
 
-//
-//        binding.recyclerView.adapter = adapter
-//        binding.recyclerView.setHasFixedSize(true)
+        val adapter = RepositoryAdapter()
+
+        binding.githubReposView.adapter = adapter
+        binding.githubReposView.setHasFixedSize(true)
+
+        viewModel.githubRepositories.observe(viewLifecycleOwner, Observer {
+
+            adapter.setData(it)
+        })
     }
 }

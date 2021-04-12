@@ -12,8 +12,9 @@ import com.kurly.task.searchgithub.R
 import com.kurly.task.searchgithub.databinding.ItemGithubBinding
 import com.kurly.task.searchgithub.model.RepositoryModel
 
-class RepositoryAdapter(private var repositories: ArrayList<RepositoryModel>) :
-   ListAdapter<RepositoryModel, RepositoryAdapter.ViewHolder>(RepoDiffUtil) {
+class RepositoryAdapter() : ListAdapter<RepositoryModel, RepositoryAdapter.ViewHolder>(RepoDiffUtil) {
+
+    var repositories: List<RepositoryModel> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -28,12 +29,12 @@ class RepositoryAdapter(private var repositories: ArrayList<RepositoryModel>) :
     }
     override fun getItemCount(): Int {
 
-        return super.getItemCount()
+        return repositories.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val repository = getItem(position)
+        val repository = repositories[position]
         holder.bind(repository)
     }
 
@@ -41,7 +42,7 @@ class RepositoryAdapter(private var repositories: ArrayList<RepositoryModel>) :
 
         fun bind(repository: RepositoryModel) {
 
-            // binding.repository = repository
+             binding.repository = repository
             binding.executePendingBindings()
         }
     }
@@ -59,4 +60,9 @@ class RepositoryAdapter(private var repositories: ArrayList<RepositoryModel>) :
         }
     }
 
+    fun setData(repositories: List<RepositoryModel>) {
+
+        this.repositories = repositories
+        notifyDataSetChanged()
+    }
 }
