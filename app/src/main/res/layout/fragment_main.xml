@@ -18,7 +18,7 @@
         tools:context=".ui.main.MainFragment">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/searchButton"
+            android:id="@+id/btn_main_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/border_round_10_303030"
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/inputView"
+            android:id="@+id/edit_main_keyword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -37,13 +37,13 @@
             android:inputType="text"
             android:maxLines="1"
             android:text="@={viewModel.keyword}"
-            app:layout_constraintBottom_toBottomOf="@id/searchButton"
-            app:layout_constraintEnd_toStartOf="@id/searchButton"
+            app:layout_constraintBottom_toBottomOf="@id/btn_main_search"
+            app:layout_constraintEnd_toStartOf="@id/btn_main_search"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/searchButton" />
+            app:layout_constraintTop_toTopOf="@id/btn_main_search" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/githubReposView"
+            android:id="@+id/recycler_main_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
@@ -53,10 +53,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/inputView"
+            app:layout_constraintTop_toBottomOf="@id/edit_main_keyword"
             app:layout_constraintVertical_bias="0.157"
             app:repoData="@{viewModel.githubRepositories}"
             tools:listitem="@layout/item_github" />
 
+        <ProgressBar
+            android:id="@+id/progress_main"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.progress}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

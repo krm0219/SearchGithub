@@ -3,4 +3,6 @@
 
     <string name="text_search">Search</string>
     <string name="msg_input_keyword">Input keyword</string>
+    <string name="msg_empty_keyword">Please enter the keyword.</string>
+    <string name="msg_error">Server Connect Error.</string>
 </resources>
